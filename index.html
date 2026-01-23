@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAWAQ | متجر الموضة الأردني الأول</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+<body>
+
+    <div class="announcement-bar">توصيل مجاني للطلبات فوق 50 دينار داخل الأردن</div>
+
+ <header class="main-header">
+    <div class="container flex-header">
+        <div class="header-left">
+            <div class="menu-toggle" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></div>
+            <a href="index.html" class="logo">RAWAQ</a>
+        </div>
+
+        <div class="header-center">
+            <div class="search-container">
+                <input type="text" id="main-search" placeholder="عن ماذا تبحث اليوم؟">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+            <a href="#" onclick="loadProducts('women')">نساء</a>
+            <a href="#" onclick="loadProducts('men')">رجال</a>
+            <a href="#" onclick="loadProducts('kids')">بكجات</a>
+            <a href="#" class="sale">تخفيضات</a>
+        <div class="header-right header-actions">
+            <i class="far fa-user"></i>
+            <div class="cart-btn" onclick="toggleCart()">
+                <i class="fas fa-shopping-bag"></i>
+                <span id="bag-count">0</span>
+            </div>
+        </div>
+    </div>
+</header>
+    <main class="container py-4" id="home-view">
+        <div class="shop-wrapper">
+            <aside class="sidebar-filters">
+                <h3>تصفية</h3>
+                <div class="filter-group">
+                    <h4>اللون</h4>
+                    <div class="color-options">
+                        <span class="color-dot black"></span>
+                        <span class="color-dot white"></span>
+                        <span class="color-dot beige"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="products-grid" id="main-grid">
+                </div>
+        </div>
+    </main> 
+
+    <section id="product-details-view" class="product-page-hidden">
+        <div class="container">
+            <button class="back-link" onclick="closeDetails()"><i class="fas fa-chevron-right"></i> العودة</button>
+            <div id="product-content" class="details-flex">
+                </div>
+        </div>
+    </section>
+
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="cart-header">
+            <h3>حقيبة التسوق</h3>
+            <i class="fas fa-times" onclick="toggleCart()"></i>
+        </div>
+        <div id="cart-items" class="cart-items-body"></div>
+        <div class="cart-footer">
+            <div class="total-row"><span>الإجمالي:</span> <span id="cart-total">0.00</span> د.أ</div>
+            <button class="checkout-btn" onclick="openCheckout()">إتمام الطلب</button>
+    <div id="checkout-modal" class="modal">
+    <div class="modal-box">
+        <span class="close" onclick="closeCheckout()">&times;</span>
+        <h3>تفاصيل الشحن (الأردن)</h3>
+        <form id="whatsapp-form">
+            <input type="text" id="cust-name" placeholder="الاسم الكامل" required>
+            <input type="tel" id="cust-phone" placeholder="رقم الهاتف (07XXXXXXXX)" required>
+            <select id="cust-city" required>
+                <option value="">اختر المحافظة</option>
+                <option value="عمان">عمان</option>
+                <option value="الزرقاء">الزرقاء</option>
+                <option value="إربد">إربد</option>
+                <option value="باقي المحافظات">باقي المحافظات</option>
+            </select>
+            <textarea id="cust-address" placeholder="العنوان بالتفصيل (المنطقة، الشارع، رقم البناء)" required></textarea>
+            
+            <div class="summary-box">
+                <p>إجمالي الطلب: <span id="final-total">0</span> د.أ</p>
+                <p style="font-size: 11px; color: #666;">* التوصيل خلال 48 ساعة - الدفع عند الاستلام</p>
+            </div>
+            
+            <button type="button" class="btn-main" onclick="sendToWhatsApp()"> تأكيد وطلب عبر واتساب <i class="fab fa-whatsapp"></i></button>
+        </form>
+    </div>
+</div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+
+  <footer class="footer-col">
+                <h4>روابط هامة</h4>
+                <ul>
+                   <li><a href="#"> سياسة الاستبدال</a></li>
+                   <li><a href="#"> تتبع الطلب</a></li>
+                   <li><a href="#"> الاسئلة الشائعة</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>تواصل معنا</h4>
+                <ul>
+                    <li><i class="fa-brands fa-whatsapp"></i> +962786610095</li>
+                    <li><i class="fa-regular fa-envelope"></i> hello@rawaq.com</li>
+                </ul>
+            </div>
+        </div>
+        <div style="text-align:center; padding-top:20px; border-top: 1px solid #333; font-size: 11px; opacity: 0.5;">
+            &copy; 2026 رواق هدية. صنع بكل حب.
+        </div>
+    </footer>
+
+</body>
+</html>
