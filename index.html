@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>RAWAQ | عراقة الأناقة الأردنية</title>
+    <!-- Font Awesome 6 & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="announcement-bar">✨ تشكيلة ربيع / صيف 2026 ✨ توصيل مجاني للطلبات فوق 50 دينار داخل الأردن</div>
+
+<header class="main-header">
+    <div class="container flex-header">
+        <div class="header-left" style="display: flex; align-items:center; gap: 12px;">
+            <div class="menu-toggle" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></div>
+            <a href="#" onclick="loadProducts('all'); return false;" class="logo">RAWAQ</a>
+        </div>
+
+        <nav class="mega-menu" id="mobileMenu">
+            <a href="#" onclick="loadProducts('women'); closeMobileMenu(); return false;">نساء</a>
+            <a href="#" onclick="loadProducts('men'); closeMobileMenu(); return false;">رجال</a>
+            <a href="#" onclick="loadProducts('kids'); closeMobileMenu(); return false;">أطفال</a>
+            <a href="#" class="sale" onclick="loadProducts('sale'); closeMobileMenu(); return false;">🔥 تخفيضات</a>
+        </nav>
+
+        <div class="header-center">
+            <div class="search-container">
+                <input type="text" id="main-search" placeholder="ابحث عن تصاميم راقية...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+
+        <div class="header-right">
+            <div class="cart-btn" onclick="toggleCart()">
+                <i class="fas fa-shopping-bag"></i>
+                <span id="bag-count">0</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container" id="main-section">
+        <div class="products-grid" id="main-grid"></div>
+    </div>
+
+    <!-- product details panel -->
+    <section id="product-details-view" class="product-page-hidden">
+        <div class="container">
+            <button class="back-link" onclick="closeDetails()"><i class="fas fa-arrow-right"></i> العودة للتسوق</button>
+            <div id="product-content" class="details-flex"></div>
+        </div>
+    </section>
+</main>
+
+<!-- Cart drawer -->
+<div id="cart-drawer" class="cart-drawer">
+    <div class="cart-header"><h3>حقيبة التسوق</h3><i class="fas fa-times" onclick="toggleCart()"></i></div>
+    <div id="cart-items" class="cart-items-body"></div>
+    <div class="cart-footer">
+        <div class="total-row" style="display:flex; justify-content:space-between;">
+            <span>الإجمالي:</span> 
+            <span id="cart-total">0.00</span> د.أ
+        </div>
+        <button class="checkout-btn" onclick="openCheckout()">إتمام الطلب</button>
+    </div>
+</div>
+
+<!-- Checkout Modal -->
+<div id="checkout-modal" class="modal">
+    <div class="modal-box">
+        <span class="close" style="float:left; cursor:pointer;" onclick="closeCheckout()">&times;</span>
+        <h3>تفاصيل الشحن الفاخر</h3>
+        <form id="whatsapp-form">
+            <input type="text" id="cust-name" placeholder="الاسم الكامل" required>
+            <input type="tel" id="cust-phone" placeholder="رقم الهاتف (07XXXXXXXX)" required>
+            <select id="cust-city" required>
+                <option value="">اختر المحافظة</option>
+                <option>عمان</option>
+                <option>الزرقاء</option>
+                <option>إربد</option>
+                <option>المفرق</option>
+                <option>الكرك</option>
+            </select>
+            <textarea id="cust-address" placeholder="العنوان بالتفصيل" required></textarea>
+            <div class="summary-box">
+                <p>إجمالي الطلب: <span id="final-total">0</span> د.أ</p>
+            </div>
+            <button type="button" class="btn-confirm" onclick="sendToWhatsApp()">
+                تأكيد الطلب عبر واتساب <i class="fab fa-whatsapp"></i>
+            </button>
+        </form>
+    </div>
+</div>
+
+<footer class="main-footer">
+    <div class="container footer-content">
+        <div class="footer-col">
+            <h4>روابط هامة</h4>
+            <ul>
+                <li><a href="#">سياسة الاستبدال والضمان</a></li>
+                <li><a href="#">تتبع الطلب المميز</a></li>
+                <li><a href="#">خدمة العملاء VIP</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>تواصل معنا</h4>
+            <p><i class="fab fa-whatsapp"></i> +962 78 661 0095</p>
+            <p><i class="far fa-envelope"></i> concierge@rawaq.com</p>
+        </div>
+    </div>
+    <div class="footer-bottom" style="text-align:center; padding-top:30px;">
+        &copy; 2026 RAWAQ - تصميم يعكس هوية العصرية الأردنية
+    </div>
+</footer>
+
+<script src="index.js"></script>
+</body>
+</html>
