@@ -1,26 +1,26 @@
 // مصفوفة المنتجات الضخمة (Inventory) لمتجر رواق
 const inventory = [
     // --- قسم النساء (Women) ---
-    { id: 2, name: "بلوزة صوفية ناعمة - بيج",image: "images/12.png", price: 18.50, cat: "women", sizes: ['M', 'L', 'XL'], rating: 4.7, reviews: 95, desc: "دافئة ومريحة لفصل الشتاء." },
-    { id: 3, name: "حقيبة يد كلاسيكية - جلد",image: "images/10.png", price: 22.00, cat: "women", sizes: ['One Size'], rating: 4.5, reviews: 150, desc: "تضيف لمسة فخامة لإطلالتك اليومية." },
-    { id: 4, name: "طقم رياضي نسائي 2 قطعة",image: "images/1.png", price: 27.00, cat: "women", sizes: ['S', 'M', 'L'], rating: 4.8, reviews: 67, desc: "مرونة عالية ومناسب للياقة البدنية." },
-    { id: 5, name: "عطر ميس رواق - 100 مل",image: "images/7.png", price: 40.00, cat: "women", sizes: ['100ml'], rating: 5.0, reviews: 300, desc: "رائحة زهرية تدوم طويلاً." },
-    { id: 6, name: "نظارة شمسية عين القطة",image: "images/8.png", price: 12.00, cat: "women", sizes: ['One Size'], rating: 4.2, reviews: 45, desc: "تصميم عصري يحمي من الأشعة فوق البنفسجية." },
-    { id: 1, name: "فستان سهرة أسود ستان",image: "images/5.png ", price: 35.00, cat: "women", sizes: ['S', 'M', 'L'], rating: 4.9, reviews: 210, desc: "أناقة لا مثيل لها للمناسبات الخاصة." },
+    { id: 2, name: "بلوزة صوفية ناعمة - بيج",image: "12.png", price: 18.50, cat: "women", sizes: ['M', 'L', 'XL'], rating: 4.7, reviews: 95, desc: "دافئة ومريحة لفصل الشتاء." },
+    { id: 3, name: "حقيبة يد كلاسيكية - جلد",image: "10.png", price: 22.00, cat: "women", sizes: ['One Size'], rating: 4.5, reviews: 150, desc: "تضيف لمسة فخامة لإطلالتك اليومية." },
+    { id: 4, name: "طقم رياضي نسائي 2 قطعة",image: "1.png", price: 27.00, cat: "women", sizes: ['S', 'M', 'L'], rating: 4.8, reviews: 67, desc: "مرونة عالية ومناسب للياقة البدنية." },
+    { id: 5, name: "عطر ميس رواق - 100 مل",image: "7.png", price: 40.00, cat: "women", sizes: ['100ml'], rating: 5.0, reviews: 300, desc: "رائحة زهرية تدوم طويلاً." },
+    { id: 6, name: "نظارة شمسية عين القطة",image: "8.png", price: 12.00, cat: "women", sizes: ['One Size'], rating: 4.2, reviews: 45, desc: "تصميم عصري يحمي من الأشعة فوق البنفسجية." },
+    { id: 1, name: "فستان سهرة أسود ستان",image: "5.png ", price: 35.00, cat: "women", sizes: ['S', 'M', 'L'], rating: 4.9, reviews: 210, desc: "أناقة لا مثيل لها للمناسبات الخاصة." },
 
     // --- قسم الرجال (Men) ---
-    { id: 7, name: "هودي أوفرسايز - كحلي",image: "images/4.png", price: 24.00, cat: "men", sizes: ['L', 'XL', 'XXL'], rating: 4.6, reviews: 112, desc: "إطلالة كاجوال مريحة جداً." },
-    { id: 8, name: "ساعة ذكية Ultra Pro",image: "images/2.png", price: 55.00, cat: "men", sizes: ['One Size'], rating: 4.9, reviews: 204, desc: "شاشة AMOLED وتتبع للنشاط البدني." },
-    { id: 9, name: "قميص كتان صيفي - أبيض",image: "images/13.png", price: 19.00, cat: "men", sizes: ['M', 'L', 'XL'], rating: 4.4, reviews: 78, desc: "خامة طبيعية باردة على الجسم." },
-    { id: 10, name: "بنطال جينز سليم فيت",image: "images/11.png", price: 21.00, cat: "men", sizes: ['30', '32', '34', '36'], rating: 4.3, reviews: 130, desc: "جينز متين وعملي للاستخدام اليومي." },
-    { id: 11, name: "حذاء رياضي Air Run",image: "images/15.png", price: 38.00, cat: "men", sizes: ['41', '42', '43', '44'], rating: 4.7, reviews: 88, desc: "خفيف الوزن ومناسب للجري." },
-    { id: 12, name: "محفظة جلد طبيعي",image: "images/14.png", price: 14.50, cat: "men", sizes: ['One Size'], rating: 4.8, reviews: 55, desc: "تصميم نحيف يتسع لجميع بطاقاتك." },
+    { id: 7, name: "هودي أوفرسايز - كحلي",image: "4.png", price: 24.00, cat: "men", sizes: ['L', 'XL', 'XXL'], rating: 4.6, reviews: 112, desc: "إطلالة كاجوال مريحة جداً." },
+    { id: 8, name: "ساعة ذكية Ultra Pro",image: "2.png", price: 55.00, cat: "men", sizes: ['One Size'], rating: 4.9, reviews: 204, desc: "شاشة AMOLED وتتبع للنشاط البدني." },
+    { id: 9, name: "قميص كتان صيفي - أبيض",image: "13.png", price: 19.00, cat: "men", sizes: ['M', 'L', 'XL'], rating: 4.4, reviews: 78, desc: "خامة طبيعية باردة على الجسم." },
+    { id: 10, name: "بنطال جينز سليم فيت",image: "11.png", price: 21.00, cat: "men", sizes: ['30', '32', '34', '36'], rating: 4.3, reviews: 130, desc: "جينز متين وعملي للاستخدام اليومي." },
+    { id: 11, name: "حذاء رياضي Air Run",image: "15.png", price: 38.00, cat: "men", sizes: ['41', '42', '43', '44'], rating: 4.7, reviews: 88, desc: "خفيف الوزن ومناسب للجري." },
+    { id: 12, name: "محفظة جلد طبيعي",image: "14.png", price: 14.50, cat: "men", sizes: ['One Size'], rating: 4.8, reviews: 55, desc: "تصميم نحيف يتسع لجميع بطاقاتك." },
 
     // --- قسم الأطفال (Kids) ---
-    { id: 13, name: "طقم أطفال شتوي مبطن",image: "images/16.png", price: 17.00, cat: "kids", sizes: ['2Y', '4Y', '6Y'], rating: 4.7, reviews: 40, desc: "يوفر الدفء التام لطفلك." },
-    { id: 14, name: "حذاء أطفال مضيء",image: "images/20.png", price: 15.00, cat: "kids", sizes: ['25', '26', '27', '28'], rating: 4.9, reviews: 120, desc: "تصميم مرح يحبه الأطفال." },
-    { id: 15, name: "فستان أطفال منقط", image: "images/30.png",price: 13.00, cat: "kids", sizes: ['3Y', '5Y', '7Y'], rating: 4.5, reviews: 33, desc: "لطيف جداً للمناسبات العائلية." },
-    { id: 16, name: "بيجاما قطنية 100%",image: "images/23.png", price: 10.00, cat: "kids", sizes: ['6M', '12M', '18M'], rating: 4.8, reviews: 92, desc: "قطن ناعم لا يسبب الحساسية." }
+    { id: 13, name: "طقم أطفال شتوي مبطن",image: "16.png", price: 17.00, cat: "kids", sizes: ['2Y', '4Y', '6Y'], rating: 4.7, reviews: 40, desc: "يوفر الدفء التام لطفلك." },
+    { id: 14, name: "حذاء أطفال مضيء",image: "20.png", price: 15.00, cat: "kids", sizes: ['25', '26', '27', '28'], rating: 4.9, reviews: 120, desc: "تصميم مرح يحبه الأطفال." },
+    { id: 15, name: "فستان أطفال منقط", image: "30.png",price: 13.00, cat: "kids", sizes: ['3Y', '5Y', '7Y'], rating: 4.5, reviews: 33, desc: "لطيف جداً للمناسبات العائلية." },
+    { id: 16, name: "بيجاما قطنية 100%",image: "23.png", price: 10.00, cat: "kids", sizes: ['6M', '12M', '18M'], rating: 4.8, reviews: 92, desc: "قطن ناعم لا يسبب الحساسية." }
 ];
 
 function loadProducts(filter = 'all') {
