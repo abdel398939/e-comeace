@@ -1,42 +1,137 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+    <!-- ==================== META ==================== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="RAWAQ - متجر أزياء راقي يعكس عراقة الأناقة الأردنية. تشكيلة فاخرة من الملابس والإكسسوارات.">
+    <meta name="keywords" content="أزياء أردنية, ملابس فاخرة, راواق, عراقة الأناقة, تشكيلة ربيع, صيف 2026">
+    <meta name="author" content="RAWAQ">
+    <meta name="robots" content="index, follow">
+    
+    <!-- ==================== OPEN GRAPH ==================== -->
+    <meta property="og:title" content="RAWAQ | عراقة الأناقة الأردنية">
+    <meta property="og:description" content="متجر أزياء راقي يعكس عراقة الأناقة الأردنية. تشكيلة فاخرة من الملابس والإكسسوارات.">
+    <meta property="og:image" content="https://rawaq.com/images/og-image.jpg">
+    <meta property="og:url" content="https://rawaq.com">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_JO">
+    
+    <!-- ==================== TWITTER CARD ==================== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RAWAQ | عراقة الأناقة الأردنية">
+    <meta name="twitter:description" content="متجر أزياء راقي يعكس عراقة الأناقة الأردنية.">
+    <meta name="twitter:image" content="https://rawaq.com/images/og-image.jpg">
+    
+    <!-- ==================== TITLE ==================== -->
     <title>RAWAQ | عراقة الأناقة الأردنية</title>
-    <!-- Font Awesome 6 & Google Fonts -->
+    
+    <!-- ==================== FONTS & ICONS ==================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Custom Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- ==================== STYLES ==================== -->
     <link rel="stylesheet" href="style.css">
+    
+    <!-- ==================== FAVICON ==================== -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E👑%3C/text%3E%3C/svg%3E">
+    
+    <!-- ==================== JSON-LD SCHEMA ==================== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "RAWAQ",
+        "url": "https://rawaq.com",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://rawaq.com/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+    <!-- ==================== GOOGLE ANALYTICS (اختياري) ==================== -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
 </head>
 <body>
 
-<div class="announcement-bar">✨ تشكيلة ربيع / صيف 2026 ✨ توصيل مجاني للطلبات فوق 50 دينار داخل الأردن</div>
+<!-- ============================================
+     ANNOUNCEMENT BAR
+============================================ -->
+<div class="announcement-bar">
+    <span>✨ تشكيلة ربيع / صيف 2026 ✨</span>
+    <span class="announcement-divider">|</span>
+    <span>🚚 توصيل مجاني للطلبات فوق 50 دينار داخل الأردن</span>
+    <span class="announcement-divider">|</span>
+    <span>💳 الدفع عند الاستلام</span>
+</div>
 
+<!-- ============================================
+     HEADER
+============================================ -->
 <header class="main-header">
     <div class="container flex-header">
-        <div class="header-left" style="display: flex; align-items:center; gap: 12px;">
-            <div class="menu-toggle" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></div>
-            <a href="#" onclick="loadProducts('all'); return false;" class="logo">RAWAQ</a>
+        <!-- LEFT -->
+        <div class="header-left">
+            <div class="menu-toggle" onclick="toggleMobileMenu()" aria-label="القائمة">
+                <i class="fas fa-bars"></i>
+            </div>
+            <a href="#" onclick="loadProducts('all'); return false;" class="logo" aria-label="RAWAQ الرئيسية">
+                <span class="logo-text">RAWAQ</span>
+                <span class="logo-sub">عراقة الأناقة</span>
+            </a>
         </div>
 
-        <nav class="mega-menu" id="mobileMenu">
-            <a href="#" onclick="loadProducts('women'); closeMobileMenu(); return false;">نساء</a>
-            <a href="#" onclick="loadProducts('men'); closeMobileMenu(); return false;">رجال</a>
-            <a href="#" onclick="loadProducts('kids'); closeMobileMenu(); return false;">أطفال</a>
-            <a href="#" class="sale" onclick="loadProducts('sale'); closeMobileMenu(); return false;">🔥 تخفيضات</a>
+        <!-- CENTER - MENU -->
+        <nav class="mega-menu" id="mobileMenu" role="navigation" aria-label="القائمة الرئيسية">
+            <a href="#" onclick="loadProducts('all'); closeMobileMenu(); return false;" class="active">
+                <i class="fas fa-home"></i> الرئيسية
+            </a>
+            <a href="#" onclick="loadProducts('women'); closeMobileMenu(); return false;">
+                <i class="fas fa-female"></i> نساء
+            </a>
+            <a href="#" onclick="loadProducts('men'); closeMobileMenu(); return false;">
+                <i class="fas fa-male"></i> رجال
+            </a>
+            <a href="#" onclick="loadProducts('kids'); closeMobileMenu(); return false;">
+                <i class="fas fa-child"></i> أطفال
+            </a>
+            <a href="#" class="sale" onclick="loadProducts('sale'); closeMobileMenu(); return false;">
+                🔥 تخفيضات
+            </a>
+            <a href="#" onclick="loadProducts('new'); closeMobileMenu(); return false;">
+                ✨ جديد
+            </a>
         </nav>
 
+        <!-- SEARCH -->
         <div class="header-center">
             <div class="search-container">
-                <input type="text" id="main-search" placeholder="ابحث عن تصاميم راقية...">
-                <button><i class="fas fa-search"></i></button>
+                <button aria-label="بحث"><i class="fas fa-search"></i></button>
+                <input type="text" id="main-search" placeholder="ابحث عن تصاميم راقية..." aria-label="البحث عن منتجات">
+                <button class="search-clear" id="searchClear" aria-label="مسح البحث" style="display:none;">
+                    <i class="fas fa-times-circle"></i>
+                </button>
             </div>
         </div>
 
+        <!-- RIGHT -->
         <div class="header-right">
-            <div class="cart-btn" onclick="toggleCart()">
+            <button class="wishlist-btn-header" onclick="showWishlist()" aria-label="المفضلة">
+                <i class="far fa-heart"></i>
+                <span id="wishlist-count">0</span>
+            </button>
+            <div class="cart-btn" onclick="toggleCart()" aria-label="سلة التسوق">
                 <i class="fas fa-shopping-bag"></i>
                 <span id="bag-count">0</span>
             </div>
@@ -44,81 +139,251 @@
     </div>
 </header>
 
+<!-- ============================================
+     MAIN CONTENT
+============================================ -->
 <main>
     <div class="container" id="main-section">
+        <!-- Trust Badges (شهادات الثقة) -->
+        <div class="trust-badges" id="trustBadges">
+            <div class="trust-badge">
+                <i class="fas fa-truck"></i>
+                <span>توصيل سريع 24-48 ساعة</span>
+            </div>
+            <div class="trust-badge">
+                <i class="fas fa-shield-alt"></i>
+                <span>ضمان استرجاع 7 أيام</span>
+            </div>
+            <div class="trust-badge">
+                <i class="fas fa-credit-card"></i>
+                <span>دفع آمن عند الاستلام</span>
+            </div>
+            <div class="trust-badge">
+                <i class="fas fa-star"></i>
+                <span>منتجات أصلية 100%</span>
+            </div>
+            <div class="trust-badge">
+                <i class="fas fa-headset"></i>
+                <span>دعم VIP 24/7</span>
+            </div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="loading-spinner" style="display:none; text-align:center; padding:60px;">
+            <i class="fas fa-spinner fa-spin" style="font-size:48px; color:#8B4513;"></i>
+            <p style="color:#666; margin-top:12px;">جاري تحميل المنتجات...</p>
+        </div>
+
+        <!-- Products Grid -->
         <div class="products-grid" id="main-grid"></div>
     </div>
 
-    <!-- product details panel -->
+    <!-- ============================================
+         PRODUCT DETAILS VIEW
+    ============================================ -->
     <section id="product-details-view" class="product-page-hidden">
         <div class="container">
-            <button class="back-link" onclick="closeDetails()"><i class="fas fa-arrow-right"></i> العودة للتسوق</button>
+            <button class="back-link" onclick="closeDetails()">
+                <i class="fas fa-arrow-right"></i> العودة للتسوق
+            </button>
             <div id="product-content" class="details-flex"></div>
         </div>
     </section>
 </main>
 
-<!-- Cart drawer -->
+<!-- ============================================
+     CART DRAWER
+============================================ -->
 <div id="cart-drawer" class="cart-drawer">
-    <div class="cart-header"><h3>حقيبة التسوق</h3><i class="fas fa-times" onclick="toggleCart()"></i></div>
+    <div class="cart-header">
+        <h3>🛍️ حقيبة التسوق</h3>
+        <div style="display:flex; gap:16px; align-items:center;">
+            <button onclick="clearCart()" class="clear-cart-btn" title="تفريغ السلة">
+                <i class="fas fa-trash-alt"></i>
+            </button>
+            <i class="fas fa-times" onclick="toggleCart()" style="cursor:pointer;"></i>
+        </div>
+    </div>
     <div id="cart-items" class="cart-items-body"></div>
     <div class="cart-footer">
-        <div class="total-row" style="display:flex; justify-content:space-between;">
-            <span>الإجمالي:</span> 
+        <div class="total-row">
+            <span>الإجمالي:</span>
             <span id="cart-total">0.00</span> د.أ
         </div>
-        <button class="checkout-btn" onclick="openCheckout()">إتمام الطلب</button>
+        <button class="checkout-btn" onclick="openCheckout()">
+            <i class="fas fa-check-circle"></i> إتمام الطلب
+        </button>
+        <button class="continue-shopping" onclick="toggleCart()">
+            <i class="fas fa-arrow-left"></i> متابعة التسوق
+        </button>
     </div>
 </div>
 
-<!-- Checkout Modal -->
+<!-- ============================================
+     CHECKOUT MODAL
+============================================ -->
 <div id="checkout-modal" class="modal">
     <div class="modal-box">
-        <span class="close" style="float:left; cursor:pointer;" onclick="closeCheckout()">&times;</span>
-        <h3>تفاصيل الشحن الفاخر</h3>
-        <form id="whatsapp-form">
-            <input type="text" id="cust-name" placeholder="الاسم الكامل" required>
-            <input type="tel" id="cust-phone" placeholder="رقم الهاتف (07XXXXXXXX)" required>
-            <select id="cust-city" required>
-                <option value="">اختر المحافظة</option>
-                <option>عمان</option>
-                <option>الزرقاء</option>
-                <option>إربد</option>
-                <option>المفرق</option>
-                <option>الكرك</option>
-            </select>
-            <textarea id="cust-address" placeholder="العنوان بالتفصيل" required></textarea>
-            <div class="summary-box">
-                <p>إجمالي الطلب: <span id="final-total">0</span> د.أ</p>
+        <button class="close-modal" onclick="closeCheckout()">&times;</button>
+        <h3>📋 تفاصيل الطلب</h3>
+        <form id="whatsapp-form" onsubmit="return false;">
+            <div class="form-group">
+                <label><i class="fas fa-user"></i> الاسم الكامل</label>
+                <input type="text" id="cust-name" placeholder="أدخل اسمك الكامل" required>
             </div>
+            
+            <div class="form-group">
+                <label><i class="fas fa-phone"></i> رقم الهاتف</label>
+                <input type="tel" id="cust-phone" placeholder="07XXXXXXXX" required>
+                <small style="color:#999; font-size:12px;">مثال: 0771234567</small>
+            </div>
+            
+            <div class="form-group">
+                <label><i class="fas fa-map-marker-alt"></i> المحافظة</label>
+                <select id="cust-city" required>
+                    <option value="">اختر المحافظة</option>
+                    <option value="عمان">عمان</option>
+                    <option value="الزرقاء">الزرقاء</option>
+                    <option value="إربد">إربد</option>
+                    <option value="المفرق">المفرق</option>
+                    <option value="الكرك">الكرك</option>
+                    <option value="معان">معان</option>
+                    <option value="عجلون">عجلون</option>
+                    <option value="جرش">جرش</option>
+                    <option value="البلقاء">البلقاء</option>
+                    <option value="الطفيلة">الطفيلة</option>
+                    <option value="مادبا">مادبا</option>
+                    <option value="العقبة">العقبة</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label><i class="fas fa-home"></i> العنوان بالتفصيل</label>
+                <textarea id="cust-address" placeholder="الشارع، المنطقة، البناية، الطابق..." required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label><i class="fas fa-sticky-note"></i> ملاحظات إضافية (اختياري)</label>
+                <textarea id="cust-notes" placeholder="أي تعليمات خاصة للتوصيل..."></textarea>
+            </div>
+
+            <!-- Payment Options -->
+            <div class="payment-options">
+                <p style="font-weight:700; margin-bottom:8px;">💳 طريقة الدفع:</p>
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="cod" checked>
+                    <span><i class="fas fa-money-bill"></i> الدفع عند الاستلام</span>
+                </label>
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="card">
+                    <span><i class="fas fa-credit-card"></i> بطاقة ائتمان</span>
+                </label>
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="cliq">
+                    <span><i class="fas fa-mobile-alt"></i> كليك (eFAWATEERcom)</span>
+                </label>
+            </div>
+            
+            <div class="summary-box">
+                <p>📦 عدد المنتجات: <span id="item-count">0</span></p>
+                <p>💰 إجمالي الطلب: <span id="final-total">0</span> د.أ</p>
+            </div>
+            
             <button type="button" class="btn-confirm" onclick="sendToWhatsApp()">
-                تأكيد الطلب عبر واتساب <i class="fab fa-whatsapp"></i>
+                <i class="fab fa-whatsapp"></i> تأكيد الطلب عبر واتساب
             </button>
+            
+            <p style="text-align:center; color:#999; font-size:12px; margin-top:12px;">
+                <i class="fas fa-lock"></i> معلوماتك آمنة ومشفرة
+            </p>
         </form>
     </div>
 </div>
 
-<footer class="main-footer">
-    <div class="container footer-content">
-        <div class="footer-col">
-            <h4>روابط هامة</h4>
-            <ul>
-                <li><a href="#">سياسة الاستبدال والضمان</a></li>
-                <li><a href="#">تتبع الطلب المميز</a></li>
-                <li><a href="#">خدمة العملاء VIP</a></li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <h4>تواصل معنا</h4>
-            <p><i class="fab fa-whatsapp"></i> +962 78 661 0095</p>
-            <p><i class="far fa-envelope"></i> concierge@rawaq.com</p>
+<!-- ============================================
+     WISHLIST MODAL
+============================================ -->
+<div id="wishlist-modal" class="modal">
+    <div class="modal-box">
+        <button class="close-modal" onclick="closeWishlist()">&times;</button>
+        <h3>❤️ المفضلة</h3>
+        <div id="wishlist-items" style="padding:10px 0;">
+            <p style="color:#999; text-align:center;">لا توجد منتجات في المفضلة</p>
         </div>
     </div>
-    <div class="footer-bottom" style="text-align:center; padding-top:30px;">
-        &copy; 2026 RAWAQ - تصميم يعكس هوية العصرية الأردنية
+</div>
+
+<!-- ============================================
+     FOOTER
+============================================ -->
+<footer class="main-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>👑 RAWAQ</h4>
+                <p style="color:#bbb; font-size:14px; line-height:1.8;">
+                    عراقة الأناقة الأردنية، تشكيلة فاخرة من الملابس والإكسسوارات التي تعكس ذوقك الرفيع.
+                </p>
+                <div style="display:flex; gap:12px; margin-top:12px;">
+                    <a href="#" aria-label="فيسبوك"><i class="fab fa-facebook" style="font-size:20px; color:#bbb;"></i></a>
+                    <a href="#" aria-label="إنستغرام"><i class="fab fa-instagram" style="font-size:20px; color:#bbb;"></i></a>
+                    <a href="#" aria-label="تويتر"><i class="fab fa-twitter" style="font-size:20px; color:#bbb;"></i></a>
+                    <a href="#" aria-label="تيك توك"><i class="fab fa-tiktok" style="font-size:20px; color:#bbb;"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>روابط هامة</h4>
+                <ul>
+                    <li><a href="#"><i class="fas fa-chevron-left"></i> سياسة الاستبدال والضمان</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-left"></i> تتبع الطلب المميز</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-left"></i> خدمة العملاء VIP</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-left"></i> الشروط والأحكام</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>تواصل معنا</h4>
+                <p><i class="fab fa-whatsapp" style="color:#25D366;"></i> <span dir="ltr">+962 78 661 0095</span></p>
+                <p><i class="far fa-envelope"></i> concierge@rawaq.com</p>
+                <p><i class="fas fa-clock"></i> السبت - الخميس: 10ص - 10م</p>
+                <p><i class="fas fa-clock"></i> الجمعة: 12ص - 8م</p>
+            </div>
+            
+            <div class="footer-col">
+                <h4>طرق الدفع</h4>
+                <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                    <span style="background:#222; padding:4px 12px; border-radius:4px; font-size:12px; color:#bbb;">💰 كاش</span>
+                    <span style="background:#222; padding:4px 12px; border-radius:4px; font-size:12px; color:#bbb;">💳 فيزا</span>
+                    <span style="background:#222; padding:4px 12px; border-radius:4px; font-size:12px; color:#bbb;">💳 ماستركارد</span>
+                    <span style="background:#222; padding:4px 12px; border-radius:4px; font-size:12px; color:#bbb;">📱 كليك</span>
+                </div>
+                <div style="margin-top:12px;">
+                    <img src="https://placehold.co/200x40/222/bbb?text=Payment+Badges" alt="طرق الدفع" style="max-width:100%;">
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            &copy; 2026 RAWAQ - تصميم يعكس هوية العصرية الأردنية
+            <span style="display:block; font-size:11px; color:#555; margin-top:4px;">
+                <i class="fas fa-shield-alt"></i> جميع الحقوق محفوظة
+            </span>
+        </div>
     </div>
 </footer>
 
+<!-- ============================================
+     JAVASCRIPT
+============================================ -->
 <script src="index.js"></script>
+
+<!-- ============================================
+     EXTRA: Floating WhatsApp Button
+============================================ -->
+<div class="floating-whatsapp" onclick="window.open('https://wa.me/962786610095','_blank')">
+    <i class="fab fa-whatsapp"></i>
+</div>
+
 </body>
 </html>
